@@ -1159,7 +1159,6 @@ class Game {
   // メインアップデート
   // -----------------------------------------------------------------------
   update() {
-    Input.update();
     this.shake.update();
 
     switch (this.state) {
@@ -1191,6 +1190,8 @@ class Game {
         if (this.clearTimer > 200) this.state = STATE.TITLE;
         break;
     }
+
+    Input.update(); // フレーム末尾で更新することで isPressed が正しく機能する
   }
 
   _updatePlaying() {
