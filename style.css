@@ -1,0 +1,50 @@
+/* =============================================
+   POP BELL SHOOTER - スタイルシート
+   ============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0015;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+  /* 背景グラデーション（ゲームの外側） */
+  background: radial-gradient(ellipse at center, #1a003a 0%, #08000f 100%);
+}
+
+#game-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameCanvas {
+  display: block;
+  /* キャンバスのシャープなピクセル描画 */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  /* 外枠の光彩 */
+  box-shadow:
+    0 0 30px rgba(150, 80, 255, 0.6),
+    0 0 80px rgba(80, 0, 150, 0.4),
+    inset 0 0 15px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(180, 100, 255, 0.4);
+  border-radius: 4px;
+}
+
+/* タッチデバイス向け（拡張用プレースホルダー） */
+@media (max-width: 520px) {
+  #gameCanvas {
+    width: 100vw;
+    height: auto;
+  }
+}
